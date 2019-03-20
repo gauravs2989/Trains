@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
+const Map = require("./server/Map");
+
 app.use(express.static(path.join(__dirname, '../dist/train-game/')));
 
 // Catch all routes and return it to the index page
