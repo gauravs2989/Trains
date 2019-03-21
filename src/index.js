@@ -15,7 +15,6 @@ app.get('/', (req, res)=> {
 
 app.get('/server', (req, res)=> {
     console.log("Requesting data");
-    // res.send(fs.readFileSync("server/data.json"));
     var map = new Map();
     res.send(map.getHexes());
 });
