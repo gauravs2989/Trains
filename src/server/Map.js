@@ -33,7 +33,8 @@ class Map {
         var erie = this._getHex("D20");
         console.log(erie);
     
-        // Since this is a city hex, we have to create a city hex
+        // Since this is a city hex, we have to create a city tile
+        
     }
     
     _getHex(hexId) {
