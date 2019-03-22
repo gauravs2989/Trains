@@ -1,5 +1,6 @@
 const fs = require("fs");
 const Hex = require("./Hex");
+const CityTile = require("./CityTile");
 
 var config = JSON.parse(fs.readFileSync("server/data.json"));
 
@@ -34,7 +35,8 @@ class Map {
         console.log(erie);
     
         // Since this is a city hex, we have to create a city tile
-        
+        var cityTile = new CityTile("yellow", 10);
+        erie.placeTile(cityTile);
     }
     
     _getHex(hexId) {
