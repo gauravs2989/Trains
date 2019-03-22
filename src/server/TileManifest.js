@@ -1,6 +1,7 @@
 const CityTile = require("./CityTile");
 const Sides = require("./SideEnum");
 
+// Todo: Create a tile manifest json
 var manifest = {
     "erie": new CityTile("yellow", 10, [Sides.NorthEast, Sides.SouthWest, Sides.West], 2),
     "buffalo": new CityTile("red", 30, [Sides.SouthWest, Sides.West], 0),
