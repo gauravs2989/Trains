@@ -2,7 +2,7 @@ const fs = require("fs");
 const Hex = require("./Hex");
 const CityTile = require("./CityTile");
 const Sides = require("./SideEnum");
-
+const TileManifest = require("./TileManifest");
 var config = JSON.parse(fs.readFileSync("server/data.json"));
 
 class Map {
@@ -33,15 +33,11 @@ class Map {
     _placeInitialTiles() {
         // Place the initial tile on Erie (D20)
         var erie = this._getHex("D20");
-        console.log(erie);
-    
-        // Since this is a city hex, we have to place a city tile
-        erie.placeTile(new CityTile("yellow", 10, [Sides.NorthEast, Sides.SouthWest, Sides.West], 2));
+        erie.placeTile(TileManifest.getDefaultErieTile());
 
         // Place the initial tile for Buffalo (D22)
         var buffalo = this._getHex("D22");
-        console.log(buffalo);
-        buffalo.placeTile(new CityTile("red", 30, [Sides.SouthWest, Sides.West], 0));
+        buffalo.placeTile(TileManifest.getDefaultBuffaloTile());
     }
     
     _getHex(hexId) {
