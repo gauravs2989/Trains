@@ -3,7 +3,7 @@ const Hex = require("./Hex");
 const CityTile = require("./CityTile");
 const Sides = require("./SideEnum");
 const TileManifest = require("./TileManifest");
-var config = JSON.parse(fs.readFileSync("server/data.json"));
+var config = JSON.parse(fs.readFileSync("./server/data.json"));
 
 class Map {
     constructor() {
@@ -34,10 +34,27 @@ class Map {
         // Place the initial tile on Erie (D20)
         var erie = this._getHex("D20");
         erie.placeTile(TileManifest.getDefaultErieTile());
-
+        this._checkConnections(erie);
+        
         // Place the initial tile for Buffalo (D22)
         var buffalo = this._getHex("D22");
         buffalo.placeTile(TileManifest.getDefaultBuffaloTile());
+
+        this._checkConnections(buffalo);
+    }
+
+    _checkConnections(hex) {
+        var connectedSidesOnTile = hex.getConnectedSides();
+        for (var i = 0; i < connectedSidesOnTile.length; i++) {
+            // get the neighboring hex
+            var side = connectedSidesOnTile[i];
+            var neighbor = this._hexes[hex.getNeighborOnSide(side)];
+
+            console.log(neighbor);
+            if (neighbor.hasConnectingSide(side)) {
+                console.log(hex._id + " connects to " + neighbor._id);
+            }
+        }
     }
     
     _getHex(hexId) {

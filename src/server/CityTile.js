@@ -12,6 +12,14 @@ class CityTile extends Tile {
         this._connectedEdges = connectedEdges;
         this._tokenCapacity = tokenCapacity;
     }
+
+    getConnectedSides() {
+        return this._connectedEdges;
+    }
+
+    hasConnectionToSide(side) {
+        return this._connectedEdges.includes(side);
+    }
 }
 
 module.exports = CityTile;
