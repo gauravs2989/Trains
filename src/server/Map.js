@@ -3,6 +3,7 @@ const Hex = require("./Hex");
 const CityTile = require("./CityTile");
 const Sides = require("./SideEnum");
 const TileManifest = require("./TileManifest");
+const eventManager = require("./EventManager");
 var config = JSON.parse(fs.readFileSync("./server/data.json"));
 
 class Map {
@@ -13,6 +14,9 @@ class Map {
         this._addHexes();
 
         this._placeInitialTiles();
+        eventManager.on("tilePlaced", (tile) => {
+            console.log(tile);
+        });
     }
 
     getData() {
@@ -34,13 +38,12 @@ class Map {
         // Place the initial tile on Erie (D20)
         var erie = this._getHex("D20");
         erie.placeTile(TileManifest.getDefaultErieTile());
-        this._checkConnections(erie);
         
-        // Place the initial tile for Buffalo (D22)
+        // Place the initial tile for Buffalo (D22) and check connections
         var buffalo = this._getHex("D22");
         buffalo.placeTile(TileManifest.getDefaultBuffaloTile());
 
-        this._checkConnections(buffalo);
+        // this._checkConnections(buffalo);
     }
 
     _checkConnections(hex) {

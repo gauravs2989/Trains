@@ -1,4 +1,5 @@
 const Sides = require("./SideEnum");
+const eventManager = require("./EventManager");
 
 class Hex {
     constructor(id, city, neighbors) {
@@ -15,7 +16,10 @@ class Hex {
 
     placeTile(tile) {
         console.log("Placing tile on: " + this._id);
-        this._tile = tile;    
+        this._tile = tile;
+
+        var hasListener = eventManager.emit("tilePlaced", this._tile);
+        console.log(hasListener);
     }
 
     getConnectedSides() {
