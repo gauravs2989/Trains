@@ -51,6 +51,7 @@ class Map {
             var neighbor = this._hexes[hex.getNeighborOnSide(side)];
 
             console.log(neighbor);
+            // if the neighbor has a connecting side to this edge, then there is a connection
             if (neighbor.hasConnectingSide(side)) {
                 console.log(hex._id + " connects to " + neighbor._id);
             }
