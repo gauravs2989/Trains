@@ -13,10 +13,11 @@ class Map {
         this._hexes = {};
         this._addHexes();
 
-        this._placeInitialTiles();
-        eventManager.on("tilePlaced", (tile) => {
-            console.log(tile);
+        eventManager.on("tilePlaced", (hex) => {
+            this._checkConnections(hex);
         });
+
+        this._placeInitialTiles();
     }
 
     getData() {
@@ -42,8 +43,6 @@ class Map {
         // Place the initial tile for Buffalo (D22) and check connections
         var buffalo = this._getHex("D22");
         buffalo.placeTile(TileManifest.getDefaultBuffaloTile());
-
-        // this._checkConnections(buffalo);
     }
 
     _checkConnections(hex) {

@@ -18,8 +18,8 @@ class Hex {
         console.log("Placing tile on: " + this._id);
         this._tile = tile;
 
-        var hasListener = eventManager.emit("tilePlaced", this._tile);
-        console.log(hasListener);
+        // emit an event notifying that a tile was placed on this hex
+        eventManager.emit("tilePlaced", this);
     }
 
     getConnectedSides() {
