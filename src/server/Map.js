@@ -40,7 +40,7 @@ class Map {
         var erie = this._getHex("D20");
         erie.placeTile(TileManifest.getDefaultErieTile());
         
-        // Place the initial tile for Buffalo (D22) and check connections
+        // Place the initial tile for Buffalo (D22)
         var buffalo = this._getHex("D22");
         buffalo.placeTile(TileManifest.getDefaultBuffaloTile());
     }
