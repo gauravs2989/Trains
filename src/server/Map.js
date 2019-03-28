@@ -46,7 +46,7 @@ class Map {
     _checkConnections(hex) {
         var connectedSidesOnTile = hex.getConnectedSides();
         for (var i = 0; i < connectedSidesOnTile.length; i++) {
-            // get the neighboring hex
+            // get the neighboring hex on that connected side
             var side = connectedSidesOnTile[i];
             var neighbor = this._hexes[hex.getNeighborOnSide(side)];
 
