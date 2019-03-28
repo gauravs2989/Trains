@@ -1,0 +1,39 @@
+{
+    "5": {
+      "tokens": 1,
+      "color": "yellow",
+      "revenue": 20,
+      "connectedEdges": [
+        "northeast",
+        "northwest"
+      ]
+    },
+    "6": {
+      "tokens": 1,
+      "color": "yellow",
+      "revenue": 20,
+      "connectedEdges": [
+        "northeast",
+        "west"
+      ]
+    },
+    "erie": {
+      "tokens": 2,
+      "color": "yellow",
+      "revenue": 10,
+      "connectedEdges": [
+        "northeast",
+        "southwest",
+        "west"
+      ]
+    },
+    "buffalo": {
+      "tokens": 0,
+      "color": "red",
+      "revenue": 30,
+      "connectedEdges": [
+        "southwest",
+        "west"
+      ]
+    }
+  }

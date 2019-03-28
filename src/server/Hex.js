@@ -15,9 +15,7 @@ class Hex {
     }
 
     placeTile(tile) {
-        console.log("Placing tile on: " + this._id);
         this._tile = tile;
-
         // emit an event notifying that a tile was placed on this hex
         eventManager.emit("tilePlaced", this);
     }
@@ -31,17 +29,15 @@ class Hex {
     }
 
     // Check if there is a tile which has a connection to the given side
-    hasConnectingSide(side) {
+    hasTileWithConnectionTo(side) {
         // If the hex does not have a tile on it, return false
         if (!this._tile) {
-            console.log("There is no tile on the hex: " + this._id);
+            // console.log("There is no tile on the hex: " + this._id);
             return false;
         }
 
         // return if the tile has a connecting side to complete the connection
         var connectingSide = Sides.getSideToCompleteConnection(side);
-        console.log(connectingSide);
-        console.log(this._tile);
         return this._tile.hasConnectionToSide(connectingSide);
     }
 }

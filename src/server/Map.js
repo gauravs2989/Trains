@@ -1,10 +1,8 @@
 const fs = require("fs");
 const Hex = require("./Hex");
-const CityTile = require("./CityTile");
-const Sides = require("./SideEnum");
 const TileManifest = require("./TileManifest");
 const eventManager = require("./EventManager");
-var config = JSON.parse(fs.readFileSync("./server/data.json"));
+var config = JSON.parse(fs.readFileSync("./server/data/hexes.json"));
 
 class Map {
     constructor() {
@@ -52,9 +50,8 @@ class Map {
             var side = connectedSidesOnTile[i];
             var neighbor = this._hexes[hex.getNeighborOnSide(side)];
 
-            console.log(neighbor);
             // if the neighbor has a connecting side to this edge, then there is a connection
-            if (neighbor.hasConnectingSide(side)) {
+            if (neighbor.hasTileWithConnectionTo(side)) {
                 console.log(hex._id + " connects to " + neighbor._id);
             }
         }
