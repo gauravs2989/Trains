@@ -1,5 +1,5 @@
 const fs = require("fs");
-const Hex = require("./Hex");
+const Hex = require("@server/game/Hex");
 
 class HexModel {
     constructor() {

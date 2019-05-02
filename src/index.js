@@ -5,8 +5,9 @@ const path = require("path");
 const app = express();
 
 const Map = require("@server/game/Map");
-const HexModel = require("@server/game/HexModel");
-const NetworkManager = require("@server/model/NetworkManager");
+const HexModel = require("@server/model/HexModel");
+const Network = require("@server/model/Network");
+const NetworkManager = require("@server/model/NetworkManager"); 
 
 app.use(express.static(path.join(__dirname, '../dist/train-game/')));
 
@@ -17,8 +18,9 @@ app.get('/', (req, res)=> {
 
 app.get('/server', (req, res)=> {
     console.log("Requesting data");
+    var network = new Network();
     var hexModel = new HexModel();
-    var networkManager = new NetworkManager(hexModel);
+    var networkManager = new NetworkManager(network, hexModel);
     var map = new Map(hexModel);
     res.send(map.getHexes());
 });

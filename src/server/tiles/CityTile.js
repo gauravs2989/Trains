@@ -9,19 +9,17 @@ const Track = require("@server/track/Track");
 class CityTile extends Tile {
 
     constructor(color, revenue, connectedEdges, tokenCapacity) {
-        super(color);
+        super(color, connectedEdges);
         this._revenue = revenue;
-        this._connectedEdges = connectedEdges;
         this._tokenCapacity = tokenCapacity;
 
-        this._tracks = [];
-        for (var i = 0; i < this._connectedEdges.length; i++) {
-            this._tracks.push(new Track("junction", this._connectedEdges[i]));
-        }
+        this._addTracks();
     }
 
-    getConnectedSides() {
-        return this._connectedEdges;
+    _addTracks() {
+        this.getConnectedSides().forEach( (side) => {
+            this._tracks.push(new Track(null, side));
+        });
     }
 
     hasConnectionToSide(side) {

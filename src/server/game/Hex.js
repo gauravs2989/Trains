@@ -1,10 +1,16 @@
-const Sides = require("@server/utils/SideEnum");
+const Sides = require("@server/utils/Sides");
 const eventManager = require("@server/events/EventManager");
 
 class Hex {
     constructor(id, city, neighbors) {
         this._id = id;
         this._city = city;
+
+        // If there is a city on this hex, notify that
+        if (this._city) {
+            eventManager.emit("cityAdded", this._city);
+        }
+
         this._neighbors = neighbors;
     
         // A hex does not have a tile. 
@@ -19,24 +25,27 @@ class Hex {
         // emit an event notifying that a tile was placed on this hex
         eventManager.emit("tilePlaced", this);
     }
-
-    getConnectedSides() {
-        return this._tile.getConnectedSides();
+    
+    getTile() {
+        return this._tile;
     }
 
     getNeighborOnSide(side) {
         return this._neighbors[side];
     }
 
-    getTile() {
-        return this._tile;
+    getCity() {
+        return this._city;
+    }
+
+    hasCity() {
+        return this._city !== null;
     }
 
     // Check if there is a tile which has a connection to the given side
     hasTileWithConnectionTo(side) {
         // If the hex does not have a tile on it, return false
         if (!this._tile) {
-            // console.log("There is no tile on the hex: " + this._id);
             return false;
         }
 
