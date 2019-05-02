@@ -1,5 +1,5 @@
-const Tile = require("./Tile");
-const Track = require("./Track");
+const Tile = require("@server/tiles/Tile");
+const Track = require("@server/track/Track");
 
 /**
  * @lends CityTile

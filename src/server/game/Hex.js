@@ -1,5 +1,5 @@
-const Sides = require("./SideEnum");
-const eventManager = require("./EventManager");
+const Sides = require("@server/utils/SideEnum");
+const eventManager = require("@server/events/EventManager");
 
 class Hex {
     constructor(id, city, neighbors) {
@@ -26,6 +26,10 @@ class Hex {
 
     getNeighborOnSide(side) {
         return this._neighbors[side];
+    }
+
+    getTile() {
+        return this._tile;
     }
 
     // Check if there is a tile which has a connection to the given side

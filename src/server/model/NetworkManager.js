@@ -1,12 +1,22 @@
-const eventManager = require("./EventManager");
+const eventManager = require("../events/EventManager");
+const CityTile = require("../tiles/CityTile");
 class NetworkManager {
     constructor(hexModel) {
 
         this._hexModel = hexModel;
 
         eventManager.on("tilePlaced", (hex) => {
+            this._updateModel(hex);
             this._checkConnections(hex);
         });
+    }
+
+    _updateModel(hex) {
+        var tile = hex.getTile();
+        // if tile is a city tile, 
+        if (tile instanceof CityTile) {
+
+        }
     }
 
     _checkConnections(hex) {

@@ -1,12 +1,12 @@
+require("module-alias/register");
+
 const express = require("express");
 const path = require("path");
 const app = express();
 
-const fs = require("fs");
-
-const Map = require("./server/Map");
-const HexModel = require("./server/HexModel");
-const NetworkManager = require("./server/NetworkManager");
+const Map = require("@server/game/Map");
+const HexModel = require("@server/game/HexModel");
+const NetworkManager = require("@server/model/NetworkManager");
 
 app.use(express.static(path.join(__dirname, '../dist/train-game/')));
 

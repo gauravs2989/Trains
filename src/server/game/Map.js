@@ -1,4 +1,4 @@
-const TileManifest = require("./TileManifest");
+const TileManifest = require("@server/tiles/TileManifest");
 
 class Map {
     constructor(hexModel) {
