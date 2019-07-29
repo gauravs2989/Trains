@@ -21,7 +21,7 @@ class MapManager {
             this._hexes.set(mapHex.getName(), mapHex);
         }, this);
 
-        console.log(this._hexes);
+        console.log(this._hexes)
     }
 }
 

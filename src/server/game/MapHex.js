@@ -28,6 +28,9 @@ class MapHex {
             throw new Error("Tile does not exist on hex");
         }
         
+        // Set tile orientation (defaults to 0)
+        this._tileOrientation = configuration.orientation ? configuration.orientation : 0;
+
         // Optional configuration parameters
         if (configuration.city) {
             this._city = configuration.city;
