@@ -1,0 +1,61 @@
+{
+    "game": "1846 The Race for the Midwest",
+    "tileOrientation": "EW",
+    "letterOrientation": "Vertical",
+    "even": "B",
+    "hexes": [
+        {
+            "name": "D18",
+            "tile": -1
+        },
+        {
+            "name": "D20",
+            "tile": -10,
+            "city": "Erie"
+        },
+        {
+            "name": "D22",
+            "tile": -102,
+            "orientation": 0,
+            "city": "Buffalo",
+            "value": [30, 60]
+        },
+        {
+            "name": "E17",
+            "tile": -3,
+            "city": "Cleveland"
+        },
+        {
+            "name": "E19",
+            "tile": -1
+        },
+        {
+            "name": "E21",
+            "tile": -41,
+            "city": "Salamanca"
+        },
+        {
+            "name": "E23",
+            "tile": -101,
+            "city": "Binghampton",
+            "value": [20, 50]
+        },
+        {
+            "name": "C18",
+            "tile": -1,
+            "cost": 40
+        },
+        {
+            "name": "C20",
+            "tile": -42,
+            "city": "Homewood"
+        },
+        {
+            "name": "C22",
+            "tile": -102,
+            "orientation": 1,
+            "city": "Pittsburgh",
+            "value": [30, 70]
+        }
+    ]
+}

@@ -1,0 +1,134 @@
+{
+    "tiles": [
+        {
+            "color": "white",
+            "id": -1,
+            "name": "empty"
+        },
+        {
+            "color": "white",
+            "id": -2,
+            "name": "empty city"
+        },
+        {
+            "color": "white",
+            "id": -3,
+            "name": "empty Z city"
+        },
+        {
+            "color": "yellow",
+            "id": -10,
+            "name": "1 city",
+            "station": {
+                "id": "city1",
+                "type": "city",
+                "slots": 2,
+                "value": 10
+            },
+            "tracks": [
+                {
+                    "from": "city1",
+                    "to": "side0"
+                },
+                {
+                    "from": "city1",
+                    "to": "side1"
+                },
+                {
+                    "from": "city1",
+                    "to": "side3"
+                }
+            ]
+        },
+        {
+            "color": "red",
+            "id": -102,
+            "name": "Off Map 2 way",
+            "station": {
+                "id": "city1",
+                "type": "Off map city",
+                "value": -1
+            },
+            "tracks": [
+                {
+                    "from": "city1",
+                    "to": "side0"
+                },
+                {
+                    "from": "city1",
+                    "to": "side1"
+                }
+            ]
+        },
+        {
+            "color": "fixed",
+            "id": -41,
+            "name": "1 city",
+            "station": {
+                "id": "city1",
+                "type": "city",
+                "slots": 1,
+                "value": 10
+            },
+            "tracks": [
+                {
+                    "from": "city1",
+                    "to": "side1"
+                },
+                {
+                    "from": "city1",
+                    "to": "side2"
+                },
+                {
+                    "from": "city1",
+                    "to": "side4"
+                }
+            ]
+        },
+        {
+            "color": "red",
+            "id": -101,
+            "name": "Off Map 1 way",
+            "station": {
+                "id": "city1",
+                "type": "Off map city",
+                "value": -1
+            },
+            "tracks": [
+                {
+                    "from": "city1",
+                    "to": "side1"
+                }
+            ]
+        },
+        {
+            "color": "fixed",
+            "id": -42,
+            "name": "1 city",
+            "station": {
+                "id": "city1",
+                "type": "city",
+                "slots": 1,
+                "value": 10
+            },
+            "tracks": [
+                {
+                    "from": "city1",
+                    "to": "side1"
+                },
+                {
+                    "from": "city1",
+                    "to": "side2"
+                },
+                {
+                    "from": "city1",
+                    "to": "side4"
+                },
+                {
+                    "from": "city1",
+                    "to": "side5"
+                }
+            ]
+        }
+    ]
+}

@@ -6,6 +6,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '../dist/train-game/')));
 
+const MapManager = require("@server/game/MapManager");
+
 // Catch all routes and return it to the index page
 app.get('/', (req, res)=> {
     res.sendFile(path.join(__dirname, '../dist/train-game/index.html'));
@@ -13,6 +15,7 @@ app.get('/', (req, res)=> {
 
 app.get('/server', (req, res)=> {
     console.log("Requesting data");
+    var mapManager = new MapManager();
 });
 
 const port = process.env.PORT || 4600;
